@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MenuAbsen</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" type="text/css" href="menu.css" />
+  </head>
+  <body>
+    <div class="img">
+      <img src="/absenHadir/foto/notfund.png" alt="notFound" />
+      <div class="text">
+        <h1>404</h1>
+        <p>Page Not Found !</p>
+        <p>Halaman belum aktif, silahkan kembali ke menu utama!</p>
+      </div>
+      <a href="/">
+        <button id="btn">Go Back</button>
+      </a>
+    </div>
+
+    <main class="main">
+      <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <h1 class="navbar-brand" style="color: #fff">Pasbraska</h1>
+          <button
+            class="navbar-toggler bg-light"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5
+                class="offcanvas-title"
+                id="offcanvasNavbarLabel"
+                style="color: #fff"
+              >
+                Pasbraska
+              </h5>
+              <button
+                type="button"
+                class="btn-close bg-light"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="waktu">
+              <div class="jam">
+                <div id="waktu"></div>
+              </div>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="/"
+                    style="color: #fff"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Jadwal-Latihan/"
+                    >Jadwal Latihan</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Presensi
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="/Menu-Absen/"
+                        >Presensi Kelas 10</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/Absen-Hadir/Kelas-11/"
+                        >Presensi Kelas 11</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/Absen-Hadir/Kelas-11/"
+                        >Presensi Kelas 12</a
+                      >
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/Absen-Hadir/Kelas-12/"
+                        >Lainnya</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="text-center" id="absensi">
+        <img
+          src="pasbraska.jpg"
+          class="rounded"
+          alt="pasbraska"
+          width="250px"
+        />
+        <h1>PASBRASKA</h1>
+      </div>
+      <p style="margin-top: 50px"></p>
+      <div class="button">
+        <a href="/Absen-Hadir/Kelas-10/">
+          <button class="btn">Absen Hadir</button>
+        </a>
+        <br />
+        <a href="https://forms.gle/f5ZHCnT2bPGSVP7n9">
+          <button class="btn">Absen Tidak Hadir</button>
+        </a>
+      </div>
+
+      <p style="margin-top: 150px"></p>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script agar dapat dibuka di hari tertentu -->
+
+    <script>
+      window.onload = function () {
+        var currentDate = new Date();
+        var targetDate = new Date("December 21, 9000 14:30:00");
+
+        if (currentDate > targetDate) {
+          // Redirect or show a warning
+          window.location.href = "home.html";
+        }
+      };
+
+      // Jam di navbar
+
+      function updateJam() {
+        const sekarang = new Date();
+        const jam = sekarang.getHours().toString().padStart(2, "0");
+        const menit = sekarang.getMinutes().toString().padStart(2, "0");
+        const detik = sekarang.getSeconds().toString().padStart(2, "0");
+        const jamDinding = `${jam}:${menit}:${detik}`;
+
+        document.getElementById("waktu").innerText = jamDinding;
+      }
+
+      setInterval(updateJam, 1000);
+
+      updateClock();
+    </script>
+  </body>
+</html>
