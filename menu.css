@@ -131,3 +131,11 @@
   border: 1px solid white;
   width: 6em;
 }
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
