@@ -20,7 +20,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   </head>
   <body>
-    <div class="info">
+    <!-- <div class="info">
       <div
         class="img not-found"
         id="blm-aktif"
@@ -37,7 +37,7 @@
           <button id="btn">Go Back</button>
         </a>
       </div>
-    </div>
+    </div> -->
 
     <main class="main" id="main">
       <nav class="navbar bg-body-tertiary fixed-top">
@@ -165,7 +165,6 @@
         </a>
       </div>
 
-      <p style="margin-top: 150px"></p>
     </main>
 
     <script
@@ -176,24 +175,24 @@
 
     <!-- Script agar dapat dibuka di hari tertentu -->
 
-    <script>
-      window.onload = function () {
-        var currentDate = new Date();
-        var targetDate = new Date("January 16, 2024 17:00:00");
-        var blmBuka = document.getElementById("blm-aktif");
-        var main = document.getElementById("main");
+    <!-- window.onload = function () {
+      var currentDate = new Date();
+      var targetDate = new Date("January 16, 2024 17:00:00");
+      var blmBuka = document.getElementById("blm-aktif");
+      var main = document.getElementById("main");
 
-        if (currentDate > targetDate) {
-          // Redirect or show a warning
-          //window.location.href = "home.html";
-          blmBuka.style.display = "block";
-          main.style.display = "none";
-        } else {
-          blmBuka.style.display = 'none';
-          main.style.display = 'block';
-          main.style.marginTop = '-810px';
-        }
-      };
+      if (currentDate > targetDate) {
+        // Redirect or show a warning
+        //window.location.href = "home.html";
+        blmBuka.style.display = "block";
+        main.style.display = "none";
+      } else {
+        blmBuka.style.display = 'none';
+        main.style.display = 'block';
+        main.style.marginTop = '-810px';
+      }
+    }; -->
+    <script>
 
       // Jam di navbar
 

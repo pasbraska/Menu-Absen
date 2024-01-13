@@ -79,10 +79,12 @@
   padding: 20px 70px;
 }
 
-.btn:active {
+.btn:hover {
   background-color: blue;
   color: white;
 }
+
+
 
 .main {
   /* display: none; */
