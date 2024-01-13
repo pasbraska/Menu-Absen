@@ -179,7 +179,7 @@
     <script>
       window.onload = function () {
         var currentDate = new Date();
-        var targetDate = new Date("January 8, 2024 14:00:00");
+        var targetDate = new Date("January 16, 2024 17:00:00");
         var blmBuka = document.getElementById("blm-aktif");
         var main = document.getElementById("main");
 
@@ -203,6 +203,7 @@
         const menit = sekarang.getMinutes().toString().padStart(2, "0");
         const detik = sekarang.getSeconds().toString().padStart(2, "0");
         const jamDinding = `${jam}:${menit}:${detik}`;
+        
 
         document.getElementById("waktu").innerText = jamDinding;
       }
