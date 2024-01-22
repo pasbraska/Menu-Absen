@@ -20,7 +20,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   </head>
   <body>
-    <!-- <div class="info">
+    <div class="info">
       <div
         class="img not-found"
         id="blm-aktif"
@@ -33,11 +33,11 @@
           <p>Page Not Found !</p>
           <p>Hehe, Halaman belum aktif, silahkan kembali ke menu utama yaaa!</p>
         </div>
-        <a href="/">
+        <a href="pasbraska.github.io">
           <button id="btn">Go Back</button>
         </a>
       </div>
-    </div> -->
+    </div>
 
     <main class="main" id="main">
       <nav class="navbar bg-body-tertiary fixed-top">
@@ -164,7 +164,6 @@
           </button>
         </a>
       </div>
-
     </main>
 
     <script
@@ -175,24 +174,22 @@
 
     <!-- Script agar dapat dibuka di hari tertentu -->
 
-    <!-- window.onload = function () {
-      var currentDate = new Date();
-      var targetDate = new Date("January 16, 2024 17:00:00");
-      var blmBuka = document.getElementById("blm-aktif");
-      var main = document.getElementById("main");
-
-      if (currentDate > targetDate) {
-        // Redirect or show a warning
-        //window.location.href = "home.html";
-        blmBuka.style.display = "block";
-        main.style.display = "none";
-      } else {
-        blmBuka.style.display = 'none';
-        main.style.display = 'block';
-        main.style.marginTop = '-810px';
-      }
-    }; -->
     <script>
+      window.onload = function () {
+        var currentDate = new Date();
+        var targetDate = new Date("January 23, 2024 17:00:00");
+        var blmBuka = document.getElementById("blm-aktif");
+        var main = document.getElementById("main");
+
+        if (currentDate > targetDate) {
+          blmBuka.style.display = "block";
+          main.style.display = "none";
+        } else {
+          blmBuka.style.display = "none";
+          main.style.display = "block";
+          main.style.marginTop = "-810px";
+        }
+      };
 
       // Jam di navbar
 
@@ -202,7 +199,6 @@
         const menit = sekarang.getMinutes().toString().padStart(2, "0");
         const detik = sekarang.getSeconds().toString().padStart(2, "0");
         const jamDinding = `${jam}:${menit}:${detik}`;
-        
 
         document.getElementById("waktu").innerText = jamDinding;
       }
